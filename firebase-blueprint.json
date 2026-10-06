@@ -1,0 +1,61 @@
+{
+  "entities": {
+    "news": {
+      "title": "News Item",
+      "description": "Published news articles on Sami TV",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "category": { "type": "string" },
+        "categoryKey": { "type": "string" },
+        "image": { "type": "string" },
+        "content": { "type": "array" },
+        "reporter": { "type": "string" },
+        "location": { "type": "string" },
+        "division": { "type": "string" },
+        "upazila": { "type": "string" },
+        "date": { "type": "string" },
+        "publishedTime": { "type": "string" },
+        "views": { "type": "number" },
+        "readTime": { "type": "string" },
+        "isFeatured": { "type": "boolean" },
+        "tags": { "type": "array" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["id", "title", "category"]
+    },
+    "reels": {
+      "title": "Reel Video",
+      "description": "Short news reels for Sami TV",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "category": { "type": "string" },
+        "videoUrl": { "type": "string" },
+        "thumbnail": { "type": "string" },
+        "reporter": { "type": "string" },
+        "location": { "type": "string" },
+        "duration": { "type": "string" },
+        "likes": { "type": "number" },
+        "shares": { "type": "number" },
+        "views": { "type": "string" },
+        "date": { "type": "string" },
+        "tags": { "type": "array" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["id", "title", "videoUrl"]
+    }
+  },
+  "firestore": {
+    "/news/{newsId}": {
+      "schema": "news",
+      "description": "Collection of published news"
+    },
+    "/reels/{reelId}": {
+      "schema": "reels",
+      "description": "Collection of short video reels"
+    }
+  }
+}
